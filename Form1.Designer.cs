@@ -50,6 +50,7 @@
             MainStatusStrip = new StatusStrip();
             MainStatusLabel = new ToolStripStatusLabel();
             RulesButton = new Button();
+            ExitButton = new Button();
             ((System.ComponentModel.ISupportInitialize)Die1PictureBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Die2PictureBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Die3PictureBox).BeginInit();
@@ -62,45 +63,50 @@
             // InstructionsLabel
             // 
             InstructionsLabel.AutoSize = true;
-            InstructionsLabel.Location = new Point(10, 10);
+            InstructionsLabel.Location = new Point(14, 17);
+            InstructionsLabel.Margin = new Padding(4, 0, 4, 0);
             InstructionsLabel.Name = "InstructionsLabel";
-            InstructionsLabel.Size = new Size(50, 15);
+            InstructionsLabel.Size = new Size(76, 25);
             InstructionsLabel.TabIndex = 0;
             InstructionsLabel.Text = "Yahtzee!";
             // 
             // RollCountLabel
             // 
             RollCountLabel.AutoSize = true;
-            RollCountLabel.Location = new Point(10, 50);
+            RollCountLabel.Location = new Point(14, 83);
+            RollCountLabel.Margin = new Padding(4, 0, 4, 0);
             RollCountLabel.Name = "RollCountLabel";
-            RollCountLabel.Size = new Size(50, 15);
+            RollCountLabel.Size = new Size(77, 25);
             RollCountLabel.TabIndex = 1;
             RollCountLabel.Text = "Roll: 0/3";
             // 
             // CurrentPlayerLabel
             // 
             CurrentPlayerLabel.AutoSize = true;
-            CurrentPlayerLabel.Location = new Point(120, 50);
+            CurrentPlayerLabel.Location = new Point(171, 83);
+            CurrentPlayerLabel.Margin = new Padding(4, 0, 4, 0);
             CurrentPlayerLabel.Name = "CurrentPlayerLabel";
-            CurrentPlayerLabel.Size = new Size(68, 15);
+            CurrentPlayerLabel.Size = new Size(103, 25);
             CurrentPlayerLabel.TabIndex = 2;
             CurrentPlayerLabel.Text = "Player: User";
             // 
             // StatusLabel
             // 
             StatusLabel.AutoSize = true;
-            StatusLabel.Location = new Point(10, 443);
+            StatusLabel.Location = new Point(13, 338);
+            StatusLabel.Margin = new Padding(4, 0, 4, 0);
             StatusLabel.Name = "StatusLabel";
-            StatusLabel.Size = new Size(39, 15);
+            StatusLabel.Size = new Size(60, 25);
             StatusLabel.TabIndex = 3;
             StatusLabel.Text = "Status";
             // 
             // Die1PictureBox
             // 
             Die1PictureBox.Image = Properties.Resources.dice1;
-            Die1PictureBox.Location = new Point(10, 90);
+            Die1PictureBox.Location = new Point(14, 150);
+            Die1PictureBox.Margin = new Padding(4, 5, 4, 5);
             Die1PictureBox.Name = "Die1PictureBox";
-            Die1PictureBox.Size = new Size(50, 50);
+            Die1PictureBox.Size = new Size(71, 83);
             Die1PictureBox.SizeMode = PictureBoxSizeMode.Zoom;
             Die1PictureBox.TabIndex = 4;
             Die1PictureBox.TabStop = false;
@@ -108,9 +114,10 @@
             // Die2PictureBox
             // 
             Die2PictureBox.Image = Properties.Resources.dice1;
-            Die2PictureBox.Location = new Point(70, 90);
+            Die2PictureBox.Location = new Point(100, 150);
+            Die2PictureBox.Margin = new Padding(4, 5, 4, 5);
             Die2PictureBox.Name = "Die2PictureBox";
-            Die2PictureBox.Size = new Size(50, 50);
+            Die2PictureBox.Size = new Size(71, 83);
             Die2PictureBox.SizeMode = PictureBoxSizeMode.Zoom;
             Die2PictureBox.TabIndex = 5;
             Die2PictureBox.TabStop = false;
@@ -118,9 +125,10 @@
             // Die3PictureBox
             // 
             Die3PictureBox.Image = Properties.Resources.dice1;
-            Die3PictureBox.Location = new Point(130, 90);
+            Die3PictureBox.Location = new Point(186, 150);
+            Die3PictureBox.Margin = new Padding(4, 5, 4, 5);
             Die3PictureBox.Name = "Die3PictureBox";
-            Die3PictureBox.Size = new Size(50, 50);
+            Die3PictureBox.Size = new Size(71, 83);
             Die3PictureBox.SizeMode = PictureBoxSizeMode.Zoom;
             Die3PictureBox.TabIndex = 6;
             Die3PictureBox.TabStop = false;
@@ -128,9 +136,10 @@
             // Die4PictureBox
             // 
             Die4PictureBox.Image = Properties.Resources.dice1;
-            Die4PictureBox.Location = new Point(190, 90);
+            Die4PictureBox.Location = new Point(271, 150);
+            Die4PictureBox.Margin = new Padding(4, 5, 4, 5);
             Die4PictureBox.Name = "Die4PictureBox";
-            Die4PictureBox.Size = new Size(50, 50);
+            Die4PictureBox.Size = new Size(71, 83);
             Die4PictureBox.SizeMode = PictureBoxSizeMode.Zoom;
             Die4PictureBox.TabIndex = 7;
             Die4PictureBox.TabStop = false;
@@ -138,63 +147,70 @@
             // Die5PictureBox
             // 
             Die5PictureBox.Image = Properties.Resources.dice1;
-            Die5PictureBox.Location = new Point(250, 90);
+            Die5PictureBox.Location = new Point(357, 150);
+            Die5PictureBox.Margin = new Padding(4, 5, 4, 5);
             Die5PictureBox.Name = "Die5PictureBox";
-            Die5PictureBox.Size = new Size(50, 50);
+            Die5PictureBox.Size = new Size(71, 83);
             Die5PictureBox.SizeMode = PictureBoxSizeMode.Zoom;
             Die5PictureBox.TabIndex = 8;
             Die5PictureBox.TabStop = false;
             // 
             // RollDiceButton
             // 
-            RollDiceButton.Location = new Point(10, 160);
+            RollDiceButton.Location = new Point(14, 267);
+            RollDiceButton.Margin = new Padding(4, 5, 4, 5);
             RollDiceButton.Name = "RollDiceButton";
-            RollDiceButton.Size = new Size(75, 23);
+            RollDiceButton.Size = new Size(107, 38);
             RollDiceButton.TabIndex = 9;
             RollDiceButton.Text = "Roll Dice";
             RollDiceButton.UseVisualStyleBackColor = true;
             // 
             // EndTurnButton
             // 
-            EndTurnButton.Location = new Point(120, 160);
+            EndTurnButton.Location = new Point(171, 267);
+            EndTurnButton.Margin = new Padding(4, 5, 4, 5);
             EndTurnButton.Name = "EndTurnButton";
-            EndTurnButton.Size = new Size(75, 23);
+            EndTurnButton.Size = new Size(107, 38);
             EndTurnButton.TabIndex = 10;
             EndTurnButton.Text = "End Turn";
             EndTurnButton.UseVisualStyleBackColor = true;
             // 
             // NewGameButton
             // 
-            NewGameButton.Location = new Point(230, 160);
+            NewGameButton.Location = new Point(329, 267);
+            NewGameButton.Margin = new Padding(4, 5, 4, 5);
             NewGameButton.Name = "NewGameButton";
-            NewGameButton.Size = new Size(75, 23);
+            NewGameButton.Size = new Size(107, 38);
             NewGameButton.TabIndex = 11;
             NewGameButton.Text = "New Game";
             NewGameButton.UseVisualStyleBackColor = true;
             // 
             // SaveGameButton
             // 
-            SaveGameButton.Location = new Point(339, 278);
+            SaveGameButton.Location = new Point(484, 483);
+            SaveGameButton.Margin = new Padding(4, 5, 4, 5);
             SaveGameButton.Name = "SaveGameButton";
-            SaveGameButton.Size = new Size(75, 23);
+            SaveGameButton.Size = new Size(107, 38);
             SaveGameButton.TabIndex = 12;
             SaveGameButton.Text = "Save";
             SaveGameButton.UseVisualStyleBackColor = true;
             // 
             // LoadGameButton
             // 
-            LoadGameButton.Location = new Point(339, 351);
+            LoadGameButton.Location = new Point(484, 594);
+            LoadGameButton.Margin = new Padding(4, 5, 4, 5);
             LoadGameButton.Name = "LoadGameButton";
-            LoadGameButton.Size = new Size(75, 23);
+            LoadGameButton.Size = new Size(107, 38);
             LoadGameButton.TabIndex = 13;
             LoadGameButton.Text = "Load";
             LoadGameButton.UseVisualStyleBackColor = true;
             // 
             // SettingsButton
             // 
-            SettingsButton.Location = new Point(339, 417);
+            SettingsButton.Location = new Point(484, 703);
+            SettingsButton.Margin = new Padding(4, 5, 4, 5);
             SettingsButton.Name = "SettingsButton";
-            SettingsButton.Size = new Size(75, 23);
+            SettingsButton.Size = new Size(107, 38);
             SettingsButton.TabIndex = 14;
             SettingsButton.Text = "Settings";
             SettingsButton.UseVisualStyleBackColor = true;
@@ -203,59 +219,81 @@
             // 
             ScorecardGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             ScorecardGridView.Columns.AddRange(new DataGridViewColumn[] { Category, User, Computer });
-            ScorecardGridView.Location = new Point(10, 210);
+            ScorecardGridView.Location = new Point(13, 368);
+            ScorecardGridView.Margin = new Padding(4, 5, 4, 5);
             ScorecardGridView.Name = "ScorecardGridView";
             ScorecardGridView.RowHeadersVisible = false;
+            ScorecardGridView.RowHeadersWidth = 62;
             ScorecardGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            ScorecardGridView.Size = new Size(303, 230);
+            ScorecardGridView.Size = new Size(462, 604);
             ScorecardGridView.TabIndex = 15;
             // 
             // Category
             // 
             Category.HeaderText = "Category";
+            Category.MinimumWidth = 8;
             Category.Name = "Category";
+            Category.Width = 150;
             // 
             // User
             // 
             User.HeaderText = "User";
+            User.MinimumWidth = 8;
             User.Name = "User";
             User.ReadOnly = true;
+            User.Width = 150;
             // 
             // Computer
             // 
             Computer.HeaderText = "Computer";
+            Computer.MinimumWidth = 8;
             Computer.Name = "Computer";
             Computer.ReadOnly = true;
+            Computer.Width = 150;
             // 
             // MainStatusStrip
             // 
+            MainStatusStrip.ImageScalingSize = new Size(24, 24);
             MainStatusStrip.Items.AddRange(new ToolStripItem[] { MainStatusLabel });
-            MainStatusStrip.Location = new Point(0, 467);
+            MainStatusStrip.Location = new Point(0, 977);
             MainStatusStrip.Name = "MainStatusStrip";
-            MainStatusStrip.Size = new Size(422, 22);
+            MainStatusStrip.Padding = new Padding(1, 0, 20, 0);
+            MainStatusStrip.Size = new Size(1017, 32);
             MainStatusStrip.TabIndex = 16;
             MainStatusStrip.Text = "statusStrip1";
             // 
             // MainStatusLabel
             // 
             MainStatusLabel.Name = "MainStatusLabel";
-            MainStatusLabel.Size = new Size(94, 17);
+            MainStatusLabel.Size = new Size(140, 25);
             MainStatusLabel.Text = "MainStatusLabel";
             // 
             // RulesButton
             // 
-            RulesButton.Location = new Point(339, 210);
+            RulesButton.Location = new Point(484, 368);
+            RulesButton.Margin = new Padding(4, 5, 4, 5);
             RulesButton.Name = "RulesButton";
-            RulesButton.Size = new Size(75, 23);
+            RulesButton.Size = new Size(107, 38);
             RulesButton.TabIndex = 17;
             RulesButton.Text = "Rules";
             RulesButton.UseVisualStyleBackColor = true;
             // 
+            // ExitButton
+            // 
+            ExitButton.Location = new Point(482, 808);
+            ExitButton.Name = "ExitButton";
+            ExitButton.Size = new Size(112, 34);
+            ExitButton.TabIndex = 18;
+            ExitButton.Text = "Exit";
+            ExitButton.UseVisualStyleBackColor = true;
+            ExitButton.Click += ExitButton_Click;
+            // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(422, 489);
+            ClientSize = new Size(1017, 1009);
+            Controls.Add(ExitButton);
             Controls.Add(RulesButton);
             Controls.Add(MainStatusStrip);
             Controls.Add(ScorecardGridView);
@@ -274,7 +312,6 @@
             Controls.Add(CurrentPlayerLabel);
             Controls.Add(RollCountLabel);
             Controls.Add(InstructionsLabel);
-            Margin = new Padding(2);
             Name = "Form1";
             Text = "Yahtzee";
             Load += Form1_Load;
@@ -314,5 +351,6 @@
         private StatusStrip MainStatusStrip;
         private ToolStripStatusLabel MainStatusLabel;
         private Button RulesButton;
+        private Button ExitButton;
     }
 }

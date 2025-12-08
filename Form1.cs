@@ -18,9 +18,15 @@ namespace Yahtzee
 
         // Step counter for computer turn
         private int ComputerRollStep = 0;
+
+        // Chosen category for computer scoring
         private ScoreCategory ComputerChosenCategory;
 
+        // Tracks if the user has scored this turn
         private bool HasScoredThisTurn = false;
+
+        // Tracks if game over message has been shown
+        private bool GameOverMessageShown = false;
 
         public Form1()
         {
@@ -233,8 +239,11 @@ namespace Yahtzee
             // Check for game end
             bool userDone = GameManager.State.Players[0].ScoreCard.Scores.Values.All(s => s.HasValue);
             bool comDone = GameManager.State.Players[1].ScoreCard.Scores.Values.All(s => s.HasValue);
-            if (userDone && comDone)
+
+            // Show game over message if needed
+            if (userDone && comDone && !GameOverMessageShown)
             {
+                GameOverMessageShown = true;
                 int userScore = GameManager.State.Players[0].ComputeTotal();
                 int comScore = GameManager.State.Players[1].ComputeTotal();
                 string winner = userScore > comScore ? "You win!" : userScore < comScore ? "Computer wins!" : "It's a tie!";
@@ -254,6 +263,29 @@ namespace Yahtzee
                 int? userScore = GameManager.State.Players[0].ScoreCard.GetScore(cat);
                 int? comScore = GameManager.State.Players[1].ScoreCard.GetScore(cat);
                 ScorecardGridView.Rows.Add(cat.ToString(), userScore?.ToString() ?? "", comScore?.ToString() ?? "");
+            }
+
+            // Add a blank row for spacing (optional)
+            ScorecardGridView.Rows.Add("", "", "");
+
+            // Add total scores row
+            int userTotal = GameManager.State.Players[0].ComputeTotal();
+            int comTotal = GameManager.State.Players[1].ComputeTotal();
+            ScorecardGridView.Rows.Add("Total", userTotal.ToString(), comTotal.ToString());
+
+            // Add winner row if game is over
+            bool userDone = GameManager.State.Players[0].ScoreCard.Scores.Values.All(s => s.HasValue);
+            bool comDone = GameManager.State.Players[1].ScoreCard.Scores.Values.All(s => s.HasValue);
+            if (userDone && comDone)
+            {
+                string winner;
+                if (userTotal > comTotal)
+                    winner = "You win!";
+                else if (userTotal < comTotal)
+                    winner = "Computer wins!";
+                else
+                    winner = "It's a tie!";
+                ScorecardGridView.Rows.Add("Winner", winner, "");
             }
         }
 
@@ -294,6 +326,12 @@ namespace Yahtzee
                 UpdateUI();
                 StatusLabel.Text = "Your turn!";
             }
+        }
+
+        // Close dat shi
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
