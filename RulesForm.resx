@@ -117,28 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="Category.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="User.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Computer.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Category.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="User.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Computer.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="MainStatusStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>51</value>
-  </metadata>
+  <data name="RulesTextBox.Text" xml:space="preserve">
+    <value>How to Play
+
+- The game is played with 5 six-sided dice.
+- Each turn, you can roll the dice up to 3 times.
+- After each roll, you can click dice to 'hold' them (they won't roll next time).
+- After rolling, choose a scoring category to assign your dice to.
+- Each category can only be used once per game.
+- The goal is to get the highest total score after all categories are filled.
+
+Scoring Categories:
+- Ones to Sixes: Score the sum of dice showing that number.
+- Three of a Kind: At least 3 dice the same, score total of all dice.
+- Four of a Kind: At least 4 dice the same, score total of all dice.
+- Full House: 3 of one number and 2 of another, scores 25 points.
+- Small Straight: Sequence of 4 numbers (e.g., 2-3-4-5), scores 30 points.
+- Large Straight: Sequence of 5 numbers (e.g., 1-2-3-4-5), scores 40 points.
+- Yahtzee: All 5 dice the same, scores 50 points.
+- Chance: Score total of all dice.
+
+Bonus:
+- If your total for Ones–Sixes is 63 or more, you get a 35-point bonus.
+
+Gameplay:
+- You play against the computer, taking turns.
+- On your turn: Roll dice, hold any you want, roll again (up to 3 times), then pick a category to score.
+- The computer will take its turn automatically after yours.
+- The game ends when all categories are filled for both players.
+- Highest score wins!</value>
+  </data>
 </root>

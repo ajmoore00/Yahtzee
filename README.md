@@ -4,8 +4,12 @@
 
 Windows Forms Yahtzee game for C# Programming final project. 
 The first version will be user vs computer (1v1). 
-Planning to add the ability for more AI players later. 
-Focusing on correct scoring, simple UI, dice hold/roll, and a basic AI for now.
+Planning to add the ability for more Com players later. 
+Focusing on correct scoring, simple UI, dice hold/roll, and a basic Computer logic for now.
+
+I wasn't able to get around to making the save/load actually work,
+or making the computer actually smart,
+or making the settings actually do anything.
 
 ## Game Rules
 
@@ -34,7 +38,7 @@ Focusing on correct scoring, simple UI, dice hold/roll, and a basic AI for now.
 - GameState.cs
 - GameManager.cs
 - ScoreCalculator.cs
-- AIEngine.cs
+- ComEngine.cs
 - SaveLoadService.cs
 - ScoreCalculatorTests.cs
 - Program.cs
@@ -81,16 +85,16 @@ Focusing on correct scoring, simple UI, dice hold/roll, and a basic AI for now.
 
 - Save game state (players, scorecards, dice, turn, roll count) to JSON. Optional.
 
-## Roadmap
+## Plan
 
 1. Create WinForms project and MainForm.
 2. Implement DiceSet and GameManager.RollDice, show dice in UI.
 3. Implement ScoreCalculator and unit tests for scoring.
 4. Add scorecard UI and scoring assignment.
-5. Add simple AI and turn switching.
+5. Add simple Computer logic and turn switching.
 6. (Optional) Add save/load, settings, and polish.
 
-## Methods
+## Potential Methods
 
 - `GameManager.StartNewGame()`
 - `GameManager.RollDice()`
@@ -99,7 +103,7 @@ Focusing on correct scoring, simple UI, dice hold/roll, and a basic AI for now.
 - `GameManager.NextTurn()`
 - `DiceSet.Roll(Random rng)`
 - `ScoreCalculator.ScoreForCategory(ScoreCategory c, int[] dice)`
-- `AIEngine.DecideHolds(int[] dice, int roll, ScoreCard sc)`
+- `ComEngine.DecideHolds(int[] dice, int roll, ScoreCard sc)`
 - `SaveLoadService.Save(GameState s, string path)` / `Load(...)`
 
 ## First Steps
@@ -108,7 +112,7 @@ Focusing on correct scoring, simple UI, dice hold/roll, and a basic AI for now.
 - [ ] Add 5 PictureBoxes and Roll button.
 - [ ] Implement DiceSet and GameManager.RollDice().
 - [ ] Implement ScoreCalculator and unit tests for core categories.
-- [ ] Hook up basic scorecard UI and simple AI.
+- [ ] Set up basic scorecard UI and simple Com logic.
 
 ## Notes
 
@@ -116,6 +120,8 @@ Focusing on correct scoring, simple UI, dice hold/roll, and a basic AI for now.
 - Allow forced zero in any category if necessary. Tie = draw (optionally break ties by number of Yahtzees).
 - Keep scoring logic pure, UI should only show state from GameManager.
 - Start minimal, then add rules, AI improvements, and polish after basic logic works.
+
+---
 
 # Pseudocode
 
@@ -125,10 +131,10 @@ Focusing on correct scoring, simple UI, dice hold/roll, and a basic AI for now.
 
 ## 2. Design the Main Game UI (Form1)
 - Add menu options: New Game, Save, Load, Settings.
-- Add 5 PictureBoxes for dice (`pbDie0`–`pbDie4`).
+- Add 5 PictureBoxes for dice.
     - Clicking a PictureBox toggles hold/unhold for that die.
-- Add Roll button (`btnRoll`).
-- Add End Turn button (`btnEndTurn`).
+- Add Roll button.
+- Add End Turn button.
 - Add DataGridView or ListView for scorecard.
     - Clicking a category assigns score for that turn.
     - Hovering a category shows preview score.
@@ -140,7 +146,7 @@ Focusing on correct scoring, simple UI, dice hold/roll, and a basic AI for now.
     - Properties: `int[] values` (5), `bool[] held` (5)
     - Methods: `Roll(Random rng)`, `ResetHolds()`, `GetCounts()`, `Sum()`
 - Player
-    - Properties: `string Name`, `bool IsAI`, `ScoreCard scoreCard`
+    - Properties: `string Name`, `bool IsCom`, `ScoreCard scoreCard`
     - Methods: `ComputeTotal()`
 - ScoreCard
     - Properties: `Dictionary<ScoreCategory, int?> scores`
@@ -171,14 +177,14 @@ Focusing on correct scoring, simple UI, dice hold/roll, and a basic AI for now.
         - `IsLargeStraight(int[] counts)`
         - `IsYahtzee(int[] counts)`
         - `Sum(int[] dice)`
-- AIEngine
+- ComEngine
     - Methods:
         - `DecideHolds(int[] dice, int roll, ScoreCard sc)`
         - `ChooseCategory(int[] dice, ScoreCard sc)`
 
 ## 5. Settings Form (`SettingsForm.cs`)
-- Add controls for toggling advanced rules (Joker, extra Yahtzee bonuses).
-- Optionally allow changing player names or AI difficulty.
+- Add controls for toggling advanced rules (Ones are wild, extra Yahtzee bonuses).
+- Optionally allow changing player names or Com difficulty.
 
 ## 6. Save/Load Service
 - SaveLoadService
@@ -217,12 +223,14 @@ Focusing on correct scoring, simple UI, dice hold/roll, and a basic AI for now.
 - On "Save"/"Load":
     - Use `SaveLoadService` to save/load game state.
 
-## 10. AI Turn Logic
+## 10. Com Turn Logic
 - If current player is AI:
-    - Use `AIEngine.DecideHolds()` to select dice to hold.
+    - Use `ComEngine.DecideHolds()` to select dice to hold.
     - Roll up to 3 times.
-    - Use `AIEngine.ChooseCategory()` to pick best category.
+    - Use `ComEngine.ChooseCategory()` to pick best category.
     - Assign score and end turn.
+    
+    - Added a timer delay and status updates.
 
 ## 11. Scoring Logic
 - Use `ScoreCalculator` to compute possible scores for each category.
@@ -245,3 +253,8 @@ Focusing on correct scoring, simple UI, dice hold/roll, and a basic AI for now.
 - Load images for dice faces in PictureBoxes.
 
 ---
+
+# AI Assistance
+- Copilot wrote most of the comments, but only after everything was done.
+- I had it explain the rules as well, since I never played Yahtzee.
+- It also helped with some debugging of logic errors with the computer player.
