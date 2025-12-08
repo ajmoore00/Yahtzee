@@ -258,7 +258,7 @@
             MainStatusStrip.Location = new Point(0, 977);
             MainStatusStrip.Name = "MainStatusStrip";
             MainStatusStrip.Padding = new Padding(1, 0, 20, 0);
-            MainStatusStrip.Size = new Size(1017, 32);
+            MainStatusStrip.Size = new Size(617, 32);
             MainStatusStrip.TabIndex = 16;
             MainStatusStrip.Text = "statusStrip1";
             // 
@@ -292,7 +292,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1017, 1009);
+            ClientSize = new Size(617, 1009);
             Controls.Add(ExitButton);
             Controls.Add(RulesButton);
             Controls.Add(MainStatusStrip);
